@@ -73,7 +73,7 @@ Maria Lima;(31)97777-0003;maria@email.com
 ```
 
 **Por que CSV com `;`?**
-Nomes podem conter virgulas, entao `;` e um separador mais seguro. Alem disso, e legivel em qualquer editor de texto ou planilha e facil de parsear com `strtok`.
+E-mails podem conter virgulas (ex: `ana,silva@email.com`), entao usar `,` como separador causaria erros na leitura dos campos. O `;` e um separador mais seguro nesse contexto. Alem disso, e legivel em qualquer editor de texto ou planilha e facil de parsear com `strtok`.
 
 **Por que a linha `#`?**
 Autodocumenta o arquivo sem custo: o carregador ignora qualquer linha que comece com `#`, entao o cabecalho nunca vira um contato fantasma.
