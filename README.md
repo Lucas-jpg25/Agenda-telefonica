@@ -73,7 +73,7 @@ Maria Lima;(31)97777-0003;maria@email.com
 ```
 
 **Por que CSV com `;`?**
-E-mails podem conter virgulas (ex: `ana,silva@email.com`), entao usar `,` como separador causaria erros na leitura dos campos. O `;` e um separador mais seguro nesse contexto. Alem disso, e legivel em qualquer editor de texto ou planilha e facil de parsear com `strtok`.
+O `;` e o separador padrao de arquivos CSV no Excel em portugues. Usar `,` causaria conflito pois o Excel brasileiro interpreta a virgula como separador decimal, quebrando o layout das colunas ao abrir o arquivo. Alem disso, se qualquer campo digitado pelo usuario contiver o caractere separador, a leitura pelo `strtok` quebraria — por isso o separador deve ser um caractere que dificilmente aparece em nomes, telefones ou e-mails.
 
 **Por que a linha `#`?**
 Autodocumenta o arquivo sem custo: o carregador ignora qualquer linha que comece com `#`, entao o cabecalho nunca vira um contato fantasma.
